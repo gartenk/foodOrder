@@ -25,17 +25,13 @@ public class Order  {
     public void onPostPersist(){
         //Following code causes dependency to external APIs
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
-
-
         foodorder.external.Payment payment = new foodorder.external.Payment();
         // mappings goes here
         AppApplication.applicationContext.getBean(foodorder.external.PaymentService.class)
             .createPay(payment);
 
-
         Ordered ordered = new Ordered(this);
         ordered.publishAfterCommit();
-
     }
     @PrePersist
     public void onPrePersist(){
@@ -44,6 +40,8 @@ public class Order  {
     }
     @PreRemove
     public void onPreRemove(){
+        OrderCancelled orderCancelled = new OrderCancelled(this);
+        orderCancelled.publishAfterCommit();
     }
 
     public static OrderRepository repository(){

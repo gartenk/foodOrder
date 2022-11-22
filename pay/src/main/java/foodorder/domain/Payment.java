@@ -62,16 +62,10 @@ public class Payment  {
 
     @PrePersist
     public void onPrePersist(){
-
-
         PayApprovaled payApprovaled = new PayApprovaled(this);
         payApprovaled.publishAfterCommit();
-
-
-
         PayCanceled payCanceled = new PayCanceled(this);
         payCanceled.publishAfterCommit();
-
     }
 
     public static PaymentRepository repository(){

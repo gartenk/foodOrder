@@ -10,7 +10,7 @@ import java.util.Date;
 
 @FeignClient(name = "pay", url = "${api.url.pay}")
 public interface PaymentService {
-    @RequestMapping(method= RequestMethod.POST, path="/payments")
+    @RequestMapping(method= RequestMethod.POST, path="/payments", callback="PaymentCallbackService.class")
     public void createPay(@RequestBody Payment payment);
 }
 

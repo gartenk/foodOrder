@@ -17,6 +17,9 @@ import javax.transaction.Transactional;
 public class OrderController {
     @Autowired
     OrderRepository orderRepository;
+    
+    @Autowired
+    MenuRepository menuRepository;
 
     @PostMapping(value="/orders")
     public void createOrder(@RequestBody CreateOrderCommand ordercmd) {
@@ -26,5 +29,16 @@ public class OrderController {
         order.setPrice(ordercmd.getPrice());
         // 필요시 item의 부가 정보를 조회하여 order entity에 셋팅함.
         orderRepository.save()
+    }
+
+    @DeleteMapping(value="/orders/{id}")
+    public void deleteOrder(@PathVariable Long id) {
+        // 주문 정보를 조회하여 Menu view 정보를 추가한다.
+        Order order = orderRepository.findById(id).get();
+        // Menu 객체 생성
+        Menu menu = new Menu();
+        menu.setItem(order.getItem());
+
+        menuRepository.save(menu);
     }
 }
