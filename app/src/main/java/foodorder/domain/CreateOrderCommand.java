@@ -6,8 +6,8 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-public class CreateOrderCommand {
-
-
-
+public class CreateOrderCommand {    
+    private String item;
+    private Integer qty;
+    private Double price;
 }

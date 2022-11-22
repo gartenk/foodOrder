@@ -18,9 +18,13 @@ public class OrderController {
     @Autowired
     OrderRepository orderRepository;
 
-
-
-
-
-
+    @PostMapping(value="/orders")
+    public void createOrder(@RequestBody CreateOrderCommand ordercmd) {
+        Order order = new Order();
+        order.setItem(ordercmd.getItem());
+        order.setQty(ordercmd.getQty());
+        order.setPrice(ordercmd.getPrice());
+        // 필요시 item의 부가 정보를 조회하여 order entity에 셋팅함.
+        orderRepository.save()
+    }
 }

@@ -17,7 +17,7 @@ public class AbstractEvent {
 
     String eventType;
     Long timestamp;
-
+    
     public AbstractEvent(Object aggregate){
         this();
         BeanUtils.copyProperties(aggregate, this);

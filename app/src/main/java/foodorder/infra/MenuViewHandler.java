@@ -27,8 +27,8 @@ public class MenuViewHandler {
             // view 객체 생성
             Menu menu = new Menu();
             // view 객체에 이벤트의 Value 를 set 함
-            menu.set(ordered.get());
-            menu.setItem(menu.getItem() - ordered.getItem());
+            menu.setId(ordered.getId());
+            menu.setItem(ordered.getItem());
             // view 레파지 토리에 save
             menuRepository.save(menu);
 

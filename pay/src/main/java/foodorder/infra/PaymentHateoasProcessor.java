@@ -11,8 +11,6 @@ public class PaymentHateoasProcessor implements RepresentationModelProcessor<Ent
 
     @Override
     public EntityModel<Payment> process(EntityModel<Payment> model) {
-
-        
         return model;
     }
     

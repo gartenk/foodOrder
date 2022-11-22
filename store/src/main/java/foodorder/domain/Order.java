@@ -65,27 +65,11 @@ public class Order  {
     @PostPersist
     public void onPostPersist(){
 
-
-        배달시작됨 배달시작됨 = new 배달시작됨(this);
-        배달시작됨.publishAfterCommit();
-
-
-
         DeliveryStarted deliveryStarted = new DeliveryStarted(this);
         deliveryStarted.publishAfterCommit();
 
-
-
         DeliveryEnded deliveryEnded = new DeliveryEnded(this);
         deliveryEnded.publishAfterCommit();
-
-    }
-    @PrePersist
-    public void onPrePersist(){
-
-
-        쿠폰발행됨 쿠폰발행됨 = new 쿠폰발행됨(this);
-        쿠폰발행됨.publishAfterCommit();
 
     }
     @PreUpdate
@@ -96,10 +80,6 @@ public class Order  {
         OrderRepository orderRepository = StoreApplication.applicationContext.getBean(OrderRepository.class);
         return orderRepository;
     }
-
-
-
-
     public static void receiveOrder(PayApprovaled payApprovaled){
 
         /** Example 1:  new item 

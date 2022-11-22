@@ -12,40 +12,13 @@ import java.util.Date;
 @Table(name="Order_table")
 @Data
 
-public class Order  {
-
-    
+public class Order  {    
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    
-    
-    
-    
-    
     private Long id;
-    
-    
-    
-    
-    
     private String item;
-    
-    
-    
-    
-    
     private Integer qty;
-    
-    
-    
-    
-    
     private Double price;
-    
-    
-    
-    
-    
     private Integer orderState;
 
     @PostPersist
@@ -82,46 +55,12 @@ public class Order  {
 
 
     public static void changeOrderState(DeliveryStarted deliveryStarted){
-
-        /** Example 1:  new item 
         Order order = new Order();
-        repository().save(order);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(deliveryStarted.get???()).ifPresent(order->{
-            
-            order // do something
-            repository().save(order);
-
-
-         });
-        */
-
-        
+        repository().save(order);        
     }
     public static void changeOrderState(DeliveryEnded deliveryEnded){
-
-        /** Example 1:  new item 
         Order order = new Order();
-        repository().save(order);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(deliveryEnded.get???()).ifPresent(order->{
-            
-            order // do something
-            repository().save(order);
-
-
-         });
-        */
-
-        
+        repository().save(order);        
     }
 
 

@@ -104,9 +104,9 @@ public class Payment  {
         
     }
 
-    // 주문을 저장한다.
+    // 주문으로 생성된 payment를 저장한다.
     public static void createPay(Payment payment) {
-        repository().createPay(payment)
+        repository().save(payment)
     }
 
 
