@@ -41,7 +41,7 @@ logging:
 
 api:
   url:
-    pay: pay:8082
+    pay: locahost:8082
 
 
 server:

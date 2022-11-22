@@ -1,8 +1,6 @@
 package foodorder.domain;
 
-import foodorder.domain.주문됨;
 import foodorder.domain.Ordered;
-import foodorder.domain.주문취소됨;
 import foodorder.domain.OrderCanceled;
 import foodorder.AppApplication;
 import javax.persistence.*;
@@ -52,21 +50,6 @@ public class Order  {
 
     @PostPersist
     public void onPostPersist(){
-
-        //Following code causes dependency to external APIs
-        // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
-
-
-        foodorder.external.결제이력 결제이력 = new foodorder.external.결제이력();
-        // mappings goes here
-        Application.applicationContext.getBean(foodorder.external.결제이력Service.class)
-            .결제(결제이력);
-
-
-        주문됨 주문됨 = new 주문됨(this);
-        주문됨.publishAfterCommit();
-
-
         //Following code causes dependency to external APIs
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
 
@@ -83,16 +66,8 @@ public class Order  {
     }
     @PrePersist
     public void onPrePersist(){
-
-
-        주문취소됨 주문취소됨 = new 주문취소됨(this);
-        주문취소됨.publishAfterCommit();
-
-
-
         OrderCanceled orderCanceled = new OrderCanceled(this);
         orderCanceled.publishAfterCommit();
-
     }
     @PreRemove
     public void onPreRemove(){
