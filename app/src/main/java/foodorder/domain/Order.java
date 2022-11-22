@@ -40,8 +40,8 @@ public class Order  {
     }
     @PreRemove
     public void onPreRemove(){
-        OrderCancelled orderCancelled = new OrderCancelled(this);
-        orderCancelled.publishAfterCommit();
+        OrderCanceled orderCanceled = new OrderCanceled(this);
+        orderCanceled.publishAfterCommit();
     }
 
     public static OrderRepository repository(){

@@ -48,6 +48,12 @@ public class PolicyHandler{
         
 
     }
+    
+    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='OrderCanceled'")
+    public void wheneverDeliveryEnded_ChangeOrderState(@Payload OrderCanceled orderCanceled){
+        OrderCanceled event = orderCanceled;
+        Order.changeOrderState(event);   
+    }
 
 }
 
