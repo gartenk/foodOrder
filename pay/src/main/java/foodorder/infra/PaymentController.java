@@ -18,6 +18,10 @@ public class PaymentController {
     @Autowired
     PaymentRepository paymentRepository;
 
+    @PostMapping(value="/payments")
+    public void createPay(@RequestBody Payment payment) {
+        paymentRepository.createPay(payment);
+    }
 
 
 

@@ -1,6 +1,5 @@
 package foodorder.domain;
 
-import foodorder.domain.결제승인됨;
 import foodorder.domain.PayApprovaled;
 import foodorder.domain.PayCanceled;
 import foodorder.PayApplication;
@@ -65,11 +64,6 @@ public class Payment  {
     public void onPrePersist(){
 
 
-        결제승인됨 결제승인됨 = new 결제승인됨(this);
-        결제승인됨.publishAfterCommit();
-
-
-
         PayApprovaled payApprovaled = new PayApprovaled(this);
         payApprovaled.publishAfterCommit();
 
@@ -108,6 +102,11 @@ public class Payment  {
         */
 
         
+    }
+
+    // 주문을 저장한다.
+    public static void createPay(Payment payment) {
+        repository().createPay(payment)
     }
 
 
