@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Date;
 
-@FeignClient(name = "pay", url = "${api.url.pay}")
+@FeignClient(name = "pay", url = "${api.url.pay}", fallback = PaymentServiceFallback.class)
 public interface PaymentService {
-    @RequestMapping(method= RequestMethod.POST, path="/payments", callback = PaymentServiceCallback.class)
+    @RequestMapping(method= RequestMethod.POST, path="/payments")
     public void createPay(@RequestBody Payment payment);
 }
 
