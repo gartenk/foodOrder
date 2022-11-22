@@ -19,16 +19,31 @@ public class MenuViewHandler {
     private MenuRepository menuRepository;
 
     @StreamListener(KafkaProcessor.INPUT)
-    public void whenOrdered_then_CREATE_1 (@Payload Ordered ordered) {
+    public void whenDeliveryStarted_then_CREATE_1 (@Payload DeliveryStarted deliveryStarted) {
         try {
 
-            if (!ordered.validate()) return;
+            if (!deliveryStarted.validate()) return;
 
             // view 객체 생성
             Menu menu = new Menu();
             // view 객체에 이벤트의 Value 를 set 함
-            menu.set(ordered.get());
-            menu.setItem(menu.getItem() - ordered.getItem());
+            menu.set(deliveryStarted.get());
+            // view 레파지 토리에 save
+            menuRepository.save(menu);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenOrderCanceled_then_CREATE_2 (@Payload OrderCanceled orderCanceled) {
+        try {
+
+            if (!orderCanceled.validate()) return;
+
+            // view 객체 생성
+            Menu menu = new Menu();
+            // view 객체에 이벤트의 Value 를 set 함
             // view 레파지 토리에 save
             menuRepository.save(menu);
 
@@ -39,5 +54,13 @@ public class MenuViewHandler {
 
 
 
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenOrdered_then_DELETE_1(@Payload Ordered ordered) {
+        try {
+            if (!ordered.validate()) return;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }
 

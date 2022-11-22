@@ -73,6 +73,7 @@
                     { text: "canceled", value: "canceled" },
                     { text: "address", value: "address" },
                     { text: "receiver", value: "receiver" },
+                    { text: "mobileNo", value: "mobileNo" },
                 ],
             payment : [],
             newValue: {},
@@ -96,6 +97,7 @@
                 'canceled': false,
                 'address': '',
                 'receiver': '',
+                'mobileNo': '',
             }
         },
         methods: {

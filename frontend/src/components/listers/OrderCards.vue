@@ -72,6 +72,9 @@
                 'qty': 0,
                 'price': 0,
                 'orderState': 0,
+                'address': '',
+                'receiver': '',
+                'moblieNo': '',
             }
         },
         methods:{

@@ -16,6 +16,7 @@
                             
                             
                             
+                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
@@ -26,6 +27,7 @@
                             [ Canceled :  {{data.canceled }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Address :  {{data.address }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Receiver :  {{data.receiver }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ MobileNo :  {{data.mobileNo }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -113,6 +115,7 @@
                 'canceled': false,
                 'address': '',
                 'receiver': '',
+                'mobileNo': '',
             }
         },
         methods: {

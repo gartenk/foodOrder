@@ -18,8 +18,33 @@ public class OrderStateViewHandler {
     @Autowired
     private OrderStateRepository orderStateRepository;
 
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenPayApprovaled_then_CREATE_1 (@Payload PayApprovaled payApprovaled) {
+        try {
+
+            if (!payApprovaled.validate()) return;
+
+            // view 객체 생성
+            OrderState orderState = new OrderState();
+            // view 객체에 이벤트의 Value 를 set 함
+            orderState.set(payApprovaled.get());
+            // view 레파지 토리에 save
+            orderStateRepository.save(orderState);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
 
 
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenOrderCanceled_then_DELETE_1(@Payload OrderCanceled orderCanceled) {
+        try {
+            if (!orderCanceled.validate()) return;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }
 

@@ -16,6 +16,7 @@ public class PayApprovaled extends AbstractEvent {
     private Boolean canceled;
     private String address;
     private String receiver;
+    private String mobileNo;
 
     public PayApprovaled(Payment aggregate){
         super(aggregate);

@@ -60,6 +60,12 @@ public class Payment  {
     
     
     private String receiver;
+    
+    
+    
+    
+    
+    private String mobileNo;
 
     @PrePersist
     public void onPrePersist(){

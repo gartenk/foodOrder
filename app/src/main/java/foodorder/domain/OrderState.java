@@ -13,7 +13,9 @@ public class OrderState {
         @Id
         //@GeneratedValue(strategy=GenerationType.AUTO)
         private Long id;
-        private Boolean canceled;
+        private String item;
+        private Integer qty;
+        private Integer orderState;
 
 
 }

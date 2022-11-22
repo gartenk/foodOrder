@@ -60,6 +60,12 @@ public class Order  {
     
     
     
+    private String mobileNo;
+    
+    
+    
+    
+    
     private Integer deliveryState;
 
     @PostPersist

@@ -74,6 +74,7 @@
                 'canceled': false,
                 'address': '',
                 'receiver': '',
+                'mobileNo': '',
             }
         },
         methods:{

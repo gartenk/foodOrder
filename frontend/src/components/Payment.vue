@@ -23,6 +23,7 @@
             <Boolean label="Canceled" v-model="value.canceled" :editMode="editMode"/>
             <String label="Address" v-model="value.address" :editMode="editMode"/>
             <String label="Receiver" v-model="value.receiver" :editMode="editMode"/>
+            <String label="MobileNo" v-model="value.mobileNo" :editMode="editMode"/>
         </v-card-text>
 
         <v-card-actions>

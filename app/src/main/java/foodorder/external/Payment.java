@@ -12,6 +12,7 @@ public class Payment {
     private Boolean canceled;
     private String address;
     private String receiver;
+    private String mobileNo;
 }
 
 

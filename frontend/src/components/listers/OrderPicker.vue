@@ -26,6 +26,15 @@
                             <v-list-item-subtitle>
                                 OrderState :  {{item.orderState }}
                             </v-list-item-subtitle>
+                            <v-list-item-subtitle>
+                                Address :  {{item.address }}
+                            </v-list-item-subtitle>
+                            <v-list-item-subtitle>
+                                Receiver :  {{item.receiver }}
+                            </v-list-item-subtitle>
+                            <v-list-item-subtitle>
+                                MoblieNo :  {{item.moblieNo }}
+                            </v-list-item-subtitle>
                         </v-list-item-content>
 
                         <v-list-item-action>
@@ -77,6 +86,12 @@
                 if(val != undefined) {
                     var arr = this.list[val]._links.self.href.split('/');
                     obj['id'] = arr[4]; 
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     

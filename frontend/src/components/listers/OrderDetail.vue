@@ -17,6 +17,15 @@
             <div>
                 <Number label="OrderState" v-model="item.orderState" :editMode="editMode" @change="change" />
             </div>
+            <div>
+                <String label="Address" v-model="item.address" :editMode="editMode" @change="change" />
+            </div>
+            <div>
+                <String label="Receiver" v-model="item.receiver" :editMode="editMode" @change="change" />
+            </div>
+            <div>
+                <String label="MoblieNo" v-model="item.moblieNo" :editMode="editMode" @change="change" />
+            </div>
         </v-card-text>
 
         <v-card-actions>

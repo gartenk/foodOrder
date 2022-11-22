@@ -49,6 +49,24 @@ public class Order  {
     
     
     private Integer orderState;
+    
+    
+    
+    
+    
+    private String address;
+    
+    
+    
+    
+    
+    private String receiver;
+    
+    
+    
+    
+    
+    private String moblieNo;
 
     @PostPersist
     public void onPostPersist(){

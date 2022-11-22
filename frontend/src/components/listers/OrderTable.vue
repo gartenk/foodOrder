@@ -71,6 +71,9 @@
                     { text: "qty", value: "qty" },
                     { text: "price", value: "price" },
                     { text: "orderState", value: "orderState" },
+                    { text: "address", value: "address" },
+                    { text: "receiver", value: "receiver" },
+                    { text: "moblieNo", value: "moblieNo" },
                 ],
             order : [],
             newValue: {},
@@ -92,6 +95,9 @@
                 'qty': 0,
                 'price': 0,
                 'orderState': 0,
+                'address': '',
+                'receiver': '',
+                'moblieNo': '',
             }
         },
         methods: {

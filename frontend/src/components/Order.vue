@@ -21,6 +21,9 @@
             <Number label="Qty" v-model="value.qty" :editMode="editMode"/>
             <Number label="Price" v-model="value.price" :editMode="editMode"/>
             <Number label="OrderState" v-model="value.orderState" :editMode="editMode"/>
+            <String label="Address" v-model="value.address" :editMode="editMode"/>
+            <String label="Receiver" v-model="value.receiver" :editMode="editMode"/>
+            <String label="MoblieNo" v-model="value.moblieNo" :editMode="editMode"/>
         </v-card-text>
 
         <v-card-actions>

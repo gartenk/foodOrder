@@ -36,17 +36,17 @@ mvn spring-boot:run
 - app
 ```
  http :8088/주문 id="id" 품목="품목" 수량="수량" 
- http :8088/orders id="id" item="item" qty="qty" price="price" orderState="orderState" 
+ http :8088/orders id="id" item="item" qty="qty" price="price" orderState="orderState" address="address" receiver="receiver" moblieNo="moblieNo" 
 ```
 - pay
 ```
  http :8088/결제이력 id="id" orderId="orderId" 금액="금액" 
- http :8088/payments id="id" orderId="orderId" price="price" aprovaled="aprovaled" canceled="canceled" address="address" receiver="receiver" 
+ http :8088/payments id="id" orderId="orderId" price="price" aprovaled="aprovaled" canceled="canceled" address="address" receiver="receiver" mobileNo="mobileNo" 
 ```
 - store
 ```
  http :8088/주문관리 id="id" 
- http :8088/orders id="id" orderId="orderId" item="item" qty="qty" address="address" receiver="receiver" deliveryState="deliveryState" 
+ http :8088/orders id="id" orderId="orderId" item="item" qty="qty" address="address" receiver="receiver" mobileNo="mobileNo" deliveryState="deliveryState" 
 ```
 - customer
 ```

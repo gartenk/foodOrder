@@ -14,10 +14,11 @@ public class OrderCanceled extends AbstractEvent {
     private Integer qty;
     private Double price;
 
-    public OrderCanceled(Order aggregate){
+    public OrderCanceled(Order aggregate) {
         super(aggregate);
     }
-    public OrderCanceled(){
+
+    public OrderCanceled() {
         super();
     }
 }

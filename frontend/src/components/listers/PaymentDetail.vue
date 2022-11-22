@@ -23,6 +23,9 @@
             <div>
                 <String label="Receiver" v-model="item.receiver" :editMode="editMode" @change="change" />
             </div>
+            <div>
+                <String label="MobileNo" v-model="item.mobileNo" :editMode="editMode" @change="change" />
+            </div>
         </v-card-text>
 
         <v-card-actions>
